@@ -12,6 +12,15 @@
      <ul class="nav nav-tabs">
        <li><%= link_to "Home", welcome_index_path %></li>
        <li><%= link_to "About", welcome_about_path %></li>
+       <div class="pull-right user-info">
+           <% if user_signed_in? %>
+            Hello <strong><%= current_user.email %></strong>
+            <%= image_tag avatar_url(current_user.email, 40) %>
+            <% else %>
+             Please sign in or sign up
+           <% end %>
+       </div>
+       
      </ul>
   
   <%= yield %>
