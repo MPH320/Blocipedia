@@ -9,7 +9,6 @@ source 'https://rubygems.org'
  end
  
  group :development do
-   gem 'sqlite3'
    gem 'web-console', '~> 2.0'
  end
  
@@ -27,9 +26,11 @@ source 'https://rubygems.org'
    gem 'rspec-rails'
    gem 'shoulda'
    gem 'faker'
+   gem 'sqlite3'
    gem 'factory_girl_rails'
    gem 'pry-rails'
    gem 'devise'
  end
  
   gem 'bootstrap-sass'
+  gem 'marky_markov', '~> 0.3.5'

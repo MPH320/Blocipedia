@@ -1,15 +1,23 @@
 require 'random_data'
+require 'marky_markov'
+markov = MarkyMarkov::TemporaryDictionary.new
+
+markov.parse_file "zenfile.txt"
+
 
  # Create Wikis
  50.times do
  # #1
    Wiki.create!(
  # #2
-     title:  RandomData.random_sentence,
-     body:   RandomData.random_paragraph
+     title:  markov.generate_1_sentences,
+     body:   markov.generate_5_sentences
    )
  end
  wikis = Wiki.all
  
  puts "Seed finished"
  puts "#{Wiki.count} wikis created"
+ 
+
+markov.clear! # Clear the temporary dictionary.
