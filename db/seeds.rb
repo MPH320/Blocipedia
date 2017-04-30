@@ -11,7 +11,8 @@ markov.parse_file "zenfile.txt"
    Wiki.create!(
  # #2
      title:  markov.generate_1_sentences,
-     body:   markov.generate_5_sentences
+     body:   markov.generate_5_sentences,
+     private: false
    )
  end
  wikis = Wiki.all
