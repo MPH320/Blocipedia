@@ -29,8 +29,9 @@ source 'https://rubygems.org'
    gem 'sqlite3'
    gem 'factory_girl_rails'
    gem 'pry-rails'
-   gem 'devise'
+
  end
  
   gem 'bootstrap-sass'
   gem 'marky_markov', '~> 0.3.5'
+  gem 'devise'
