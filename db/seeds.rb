@@ -4,7 +4,7 @@ require 'marky_markov'
 markov = MarkyMarkov::TemporaryDictionary.new
 
 markov.parse_file "zenfile.txt"
-
+#
 #Create Users
 
   5.times do
