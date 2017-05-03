@@ -1,8 +1,20 @@
+include Faker
 require 'random_data'
 require 'marky_markov'
 markov = MarkyMarkov::TemporaryDictionary.new
 
 markov.parse_file "zenfile.txt"
+
+#Create Users
+
+  5.times do
+    user = User.create!(
+    name:     Faker::Name.name,
+    email:    RandomData.random_email,
+    password: Faker::Internet.password
+    )
+  end
+  users = User.all
 
 
  # Create Wikis
@@ -17,7 +29,30 @@ markov.parse_file "zenfile.txt"
  end
  wikis = Wiki.all
  
+ admin = User.create!(
+  name:     'admin',
+  email:    'admin@example.com',
+  password: 'helloworld',
+  role:     'admin'
+  )
+
+  #Create a standard member
+  member = User.create!(
+  name:     'member',
+  email:    'member@example.com',
+  password: 'helloworld'
+  )
+
+  #Create a premium member
+  premium = User.create!(
+    name:     'premium',
+    email:    'premium@example.com',
+    password: 'helloworld',
+    role:     'premium'
+  )
+ 
  puts "Seed finished"
+ puts "#{User.count} users created."
  puts "#{Wiki.count} wikis created"
  
 

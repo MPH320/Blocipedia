@@ -1,4 +1,8 @@
 module RandomData
+    
+    def self.random_email
+     "#{random_word}@sink.sendgrid.net"
+   end
 
    def self.random_paragraph
      sentences = []
