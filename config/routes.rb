@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
   resources :wikis
-
+  resources :charges
   devise_for :models
   devise_for :users
+  
+  resources :users do
+    member do
+      post :downgrade
+    end
+  end
 
   get 'index' => 'welcome#index'
   get 'about' => 'welcome#about'
+  get 'success' => 'welcome#success'
   
   root 'welcome#index'
 

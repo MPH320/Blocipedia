@@ -11,3 +11,5 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 SENDGRID_USERNAME: app67531468@heroku.com
 SENDGRID_PASSWORD: 6bz7p73h3497
+STRIPE_PUBLISHABLE_KEY: pk_test_AcwVPXIV2oxj9KwVwvhWiCC3
+STRIPE_SECRET_KEY: sk_test_KMq5R0oqEzbq9kEmNntvxT2D
