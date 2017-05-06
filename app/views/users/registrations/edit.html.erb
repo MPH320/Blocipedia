@@ -48,7 +48,7 @@
           <%= link_to "Upgrade to Premium", new_charge_path %>
           <% else %>
   <% if current_user.role == 'premium' %>
-    <p> <%= link_to "Downgrade Account to Standard?", downgrade_user_path(current_user), data: { confirm: "Are you sure?"}, method: :post %> </p>
+    <p> <%= button_to "Downgrade Account to Standard", downgrade_user_path(current_user), class: 'btn btn-danger', data: { confirm: "WARNING: Private Wikis will become pubic upon downgrade. Continue?" }, method: :post %> </p>
 
   <% end %>
 <% end %>

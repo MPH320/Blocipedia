@@ -42,6 +42,14 @@ markov.parse_file "zenfile.txt"
   email:    'member@example.com',
   password: 'helloworld'
   )
+  
+  #Create a premium member
+  member = User.create!(
+  name:     'premium',
+  email:    'premium@example.com',
+  password: 'helloworld',
+  role:     'premium'
+  )
  
  puts "Seed finished"
  puts "#{User.count} users created."
