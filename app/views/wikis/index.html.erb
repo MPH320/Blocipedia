@@ -2,12 +2,17 @@
 <% if user_signed_in? %>
 <%= link_to "New Wiki", new_wiki_path(@wiki), class: 'btn btn-success' %>
 <% end %>
+<br/>
+__________________________________________________________________________________________________________________________________________________
  <% @wikis.each do |wiki| %>
    <div class="media">
      <div class="media-body">
        <h4 class="media-heading">
-         <%= link_to wiki.title, wiki %>
+         <%= link_to markdown(wiki.title), wiki %>
        </h4>
+       <small>
+         <%= markdown(wiki.body) %> ____________________________________________________________________________________________________________________________________________________________________________
+       </small>
      </div>
    </div>
  <% end %>

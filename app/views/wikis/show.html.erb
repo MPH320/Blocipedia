@@ -1,11 +1,15 @@
-<h1><%= @wiki.title %></h1>
- 
+<h1><%= markdown(@wiki.title) %></h1>
+
+
  
  
  <div class="row">
    <div class="col-md-8">
-     <p class="lead"><%= @wiki.body %></p>
-    
+     <p class="lead"><%= markdown(@wiki.body) %></p>
+    ________________________________________________________________________________________________<br/>
+    <small>
+     submitted <%= time_ago_in_words(@wiki.created_at) %> ago<br/>
+    </small><br/>
       <% if user_signed_in? %>
      <%= link_to "Edit Wiki", edit_wiki_path, class: 'btn btn-warning' %>
       <% end %>
