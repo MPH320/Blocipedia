@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
     
+    def index
+    @users = User.all
+    end
+
+    def show
+    end
+    
     def downgrade
     @user = User.find(params[:id])
     @user.role = 'standard'

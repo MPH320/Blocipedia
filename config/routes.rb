@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :wikis
-  resources :charges
+
+  get 'charges/create'
   devise_for :models
   devise_for :users
   
@@ -12,7 +12,12 @@ Rails.application.routes.draw do
 
   get 'index' => 'welcome#index'
   get 'about' => 'welcome#about'
-  get 'success' => 'welcome#success'
+
+  resources :charges, only: [:new, :create]
+  resources :wikis
+  resources :wikis do
+    resources :collaborators, only: [:new, :create, :destroy]
+  end
   
   root 'welcome#index'
 

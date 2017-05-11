@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   #download another student's rails project and see if you can host, https://github.com/kvoshell/Bloccit
   #check digital ocean
   has_many :wikis
+  has_many :collaborators
+  has_many :wikis, through: :collaborators
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
